@@ -76,24 +76,17 @@ function my_keydown(e)
 	if((ball_x==hole_x)&&(ball_y==hole_y)){
         canvas.remove(ball_obj);
         document.getElementById("hd3").innerHTML="Move on";
-        var i=Math.random()*1;
-        var k=i.toFixed(0);
-        console.log(i);
-        if (k==1){
-            document.getElementById("hi").style.visibility="visible";
-            document.getElementById("aqui").style.visibility="hidden";
-            canvas.remove(ball_obj);
-        }
-        else{
-            document.getElementById("aqui").style.visibility="visible";
-            document.getElementById("hi").style.visibility="hidden";
-            canvas.remove(ball_obj);
-        }
+        document.getElementById("aqui").style.visibility="visible";
     }
     else if ((ball_x==fole_x)&&(ball_y==fole_y)){
         canvas.remove(ball_obj);
 		document.getElementById("hd3").innerHTML="FOOM!"
 		document.getElementById("myCanvas").style.borderColor="black";
+	    	if((ball_x==hole_x)&&(ball_y==hole_y)){
+			canvas.remove(ball_obj);
+			document.getElementById("hd3").innerHTML="Move on";
+			document.getElementById("aqui").style.visibility="visible";
+			document.getElementById("hi").style.visibility="visible";
     }
 	
 	else{
